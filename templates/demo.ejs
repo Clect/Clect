@@ -1,0 +1,57 @@
+<%
+    opt = {
+        css:[]
+    }
+%>
+<%- include('head')%>
+<body>
+    <h1 style="text-align:center">This is index</h1>
+    <input id="updateFileInput" type="file" name="datafile" size="40" />
+    <button class="up">up</button>
+    <button class="down">down</button>
+    <button class="info">info</button>
+    
+    <script>
+$('button.up').click(function(){
+    var Url = '/api/qiNiuUpdate';
+    var formData = new FormData();
+    var name = 'clect';
+    formData.append("file",$("#updateFileInput")[0].files[0]);
+    formData.append("name",name);
+    $.ajax({ 
+        url : Url, 
+        type : 'POST', 
+        data : formData, 
+        // 告诉jQuery不要去处理发送的数据
+        processData : false, 
+        // 告诉jQuery不要去设置Content-Type请求头
+        contentType : false,
+        beforeSend:function(){
+            console.log("正在进行，请稍候");
+        },
+        success : function(responseStr) { 
+            console.log("成功"+responseStr);
+        }, 
+        error : function(responseStr) { 
+            console.log("error");
+        } 
+    });
+})
+
+$('button.down').click(function(){
+    $.post('/api/qiNiuDownload')
+    .done(function(data){
+        console.log(data);
+    })
+})
+
+$('button.info').click(function(){
+    $.post('/api/qiNiuDownload')
+    .done(function(data){
+        console.log(data);
+    })
+})
+
+    </script>
+</body>
+</html>

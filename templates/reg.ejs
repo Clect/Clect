@@ -1,0 +1,166 @@
+<%
+    opt={
+        css:[
+            '/css/reg.css',
+        ],
+    }
+%>
+<%- include('head')%>
+    <body style="padding:20px">
+        <h1>李狗嗨的正则工具 v1.1</h1>
+        <input id="reg" class="reg" />
+        <br />
+        <div class="regType daxiaoxie">不区分大小写</div>
+        <div class="regType quanju active">全局</div>
+        <br />
+        <div class="match btn">match</div>
+        <div class="test btn">test</div>
+        <div class="clean btn">clean</div>
+        <br />
+        <div class="testInputBox">
+            <input id="test1" class="test test1" />
+            <input id="test2" class="test test2" />
+            <br />
+            <input id="test3" class="test test3" />
+            <input id="test4" class="test test4" />
+            <br />
+            <input id="test5" class="test test5" />
+            <input id="test6" class="test test6" />
+        </div>
+        <table cellspacing="0">
+            <tbody>
+                <tr>
+                    <td id="result1" class="result result1">
+                    </td>
+                    <td id="result2" class="result result2">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="result3" class="result result3">
+                    </td>
+                    <td id="result4" class="result result4">
+                    </td>
+                </tr>
+                <tr>
+                    <td  id="result5" class="result result5">
+                    </td>
+                    <td  id="result6" class="result result6">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+        <h1 class="tip">老子是tip，负责提醒你错误</h1>
+        <!-- FIX tab 回车 的试配问题   匹配文件的问题 -->
+        <!--
+        <form id="updateFile" action="/api/test_post" method="POST" enctype="multipart/form-data">
+            <p>
+                Please specify a file, or a set of files:<br />
+                <input id="updateFileInput" type="file" name="datafile" size="40" />
+                <input type="submit" />
+            </p>
+        </form>
+        -->
+    </body>
+    <script>
+    $(function(){
+        loadLocalStorage();
+
+        $('.regType').click(function(){
+            var that = $(this);
+            var isAcitve = that.hasClass('active');
+            if(isAcitve){
+                that.removeClass('active');
+            }
+            else{
+                that.addClass('active');
+            }
+        });
+
+        $('input').change(function(){
+            var that = $(this);
+            saveLocalStorage(that.attr('id'), that.val());
+        })
+        $('.btn.match').click(function(){
+            var regVal = $('input.reg').val();
+            var testVal = getTestVal();
+            regMatch(testVal, regVal);
+            
+        });
+        $('.btn.test').click(function(){
+            var regVal = $('input.reg').val();
+            var testVal = getTestVal();
+            regTest(testVal, regVal);
+        });
+        $('.btn.clean').click(function(){
+            $('input').val('');
+            $('td').text('');
+            localStorage.clear();
+        });
+    })
+    
+    function saveLocalStorage(key, val){
+        localStorage[key] = val;
+    }
+
+    function loadLocalStorage() {
+        for(var i in localStorage){
+            $('#' + i).val(localStorage[i]);
+        }
+    }
+
+    function getTestVal(){
+        var testEle = $('.test');
+        var testVal = [];
+        for(var i = 0;i < testEle.length;i++){
+            if($(testEle[i]).val().length == 0){
+                continue;
+            }
+            testVal.push($(testEle[i]).val());
+        }
+        return testVal;
+    }
+
+    function regMatch(arr, reg){
+        if(arr.length == 0){
+            $('.tip').text('没有测试用例');
+        }
+        var regExp = new RegExp(reg, regTypeHandle());
+        for(var i = 0;i < arr.length;i++){
+            let regResult = arr[i].match(regExp);
+            if(regResult === null){
+                $('#result' + (i+1)).text('啥子都没匹配到');
+            }
+            else{
+                $('#result' + (i+1)).text(regResult);
+            }
+        }
+    }
+
+    function regTest(arr, reg){
+        if(arr.length == 0){
+            $('.tip').text('没有测试用例');
+        }
+        var regExp = new RegExp(reg, regTypeHandle());
+        for(var i = 0;i < arr.length;i++){
+            let regBoolen = regExp.test(arr[i]);
+            $('#result' + (i+1)).text(regBoolen);
+        }
+    }
+    function regTypeHandle() {// 全局 大小写 没昨晚 FIX
+        var arr = '';
+        var isQuanju = $('.quanju').hasClass('active');
+        var isDaxiaoxie = $('.daxiaoxie').hasClass('active');
+        if(isQuanju){
+            arr += 'g';
+        }
+        if(isDaxiaoxie){
+            arr += 'i';
+        }
+        return arr;
+    }
+    
+    </script>
+</html>

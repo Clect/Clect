@@ -1,0 +1,82 @@
+<%
+    opt={
+        css:[
+            '/css/ajax.css',
+        ],
+    }
+%>
+<%- include('head')%>
+    <body style="padding:20px">
+        <input id="url" class="longInput" placeholder="我是url" />
+        <br />
+        <div id="get" class="buleBtnType ajaxType">GET</div><div id="post" class="buleBtnType ajaxType active">POST</div>
+        <br />
+        <h3>添加data数据</h3>
+        <input id="dataKey" class="shortInput" />
+        <input id="dataVal" class="shortInput" />
+        <div class="dataSubmit buleBtnType active">SUBMIT</div>
+        <div class="dataClear buleBtnType active">CLEAR</div>  
+        <pre class="dataScreen"><code></code></pre>
+        <pre class="ajaxResult"><code></code></pre>        
+
+        <div class="buleBigBtnType GO">GO</div>
+        <div class="buleBigBtnType GO">CORS GO</div>
+        
+        <script>
+$(function(){
+    var ajaxData = localStorage.ajaxData || '';
+    var ajaxUrl = localStorage.url || '';
+    $('pre.dataScreen code').text(ajaxData);
+    $('#url').val(ajaxUrl);
+
+
+})
+
+$('#url').change(function(){
+    var that = $(this);
+    localStorage.url = that.val();
+})
+
+$('.ajaxType').click(function(){
+    var that = $(this);
+    $('.ajaxType').removeClass('active');
+    that.addClass('active');
+})
+
+$('.dataSubmit').click(function(){
+    var that = $(this);
+    var temp = localStorage.ajaxData || '{}';
+    var ret = JSON.parse(temp);  
+    var key = $('#dataKey').val();
+    var val = $('#dataVal').val();
+    var retStr = '';    
+    ret[key] = val;
+    retStr = JSON.stringify(ret)
+    localStorage.ajaxData = retStr;
+    $('pre.dataScreen code').text(retStr);
+})
+
+$('.dataClear').click(function(){
+    localStorage.clear();
+    $('pre.dataScreen code').text('');
+    $('input').val('');
+})
+$('.GO').click(function(){
+    var ajaxOpt = {};
+
+    ajaxOpt.url = localStorage.url;
+    ajaxOpt.data = JSON.parse(localStorage.ajaxData);
+    ajaxOpt.type = $('.ajaxType.active').text();
+    ajaxOpt.success = function(data){
+        var ret = {};
+        if(data.success && typeof data.data === 'object'){
+            ret = JSON.stringify(data.data);
+        }
+        $('pre.ajaxResult code').text(ret);
+    }
+    $.ajax(ajaxOpt);
+})
+
+        </script>
+    </body>
+</html>

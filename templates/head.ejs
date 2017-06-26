@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= opt.title || '西街106号' %></title>
+    <link rel="shortcut icon" href="/i/favicon.ico" >
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <%
+      (opt.css || []).forEach(function(c) {
+      %><link rel="stylesheet" href="<%= c %>" /><%
+      });
+    %>
+  </head>

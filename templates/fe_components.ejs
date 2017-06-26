@@ -1,0 +1,104 @@
+<%
+    opt={
+        css:[
+            '/css/fe_components.css',
+        ],
+    }
+%>
+<%- include('head')%>
+    <body>
+        <div class="putibabyPPT">
+            <h1>putibabyPPT</h1>
+            <div class="pptBox">
+                <div class="pptTop">
+                    <div class="pptInner">
+                        <div class="ppt0 ppt">
+                            0
+                        </div><div class="ppt1 ppt">
+                            1
+                        </div><div class="ppt2 ppt">
+                            2
+                        </div><div class="ppt3 ppt">
+                            3
+                        </div><div class="ppt4 ppt">
+                            4
+                        </div><div class="ppt5 ppt">
+                            5
+                        </div><div class="ppt6 ppt">
+                            6
+                        </div><div class="ppt0 ppt">
+                            0<!--7-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul>
+                    
+                </ul>
+            </div>
+            <div class="last divbtn" onclick="my_slide(-1)">last</div>
+            <div class="next divbtn" onclick="my_slide(1)">next</div>
+        </div>
+        <div class="neteasePPT">
+            <h1>neteasePPT</h1>
+            <div class="pptBox">
+                <div class="pptTop">
+                    <div class="pptInner">
+                        <div class="ppt0 ppt">
+                            0<div class="shade"></div>
+                        </div><div class="ppt1 ppt active">
+                            1<div class="shade"></div>
+                        </div><div class="ppt2 ppt">
+                            2<div class="shade"></div>
+                        </div><div class="ppt3 ppt">
+                            3<div class="shade"></div>
+                        </div><div class="ppt4 ppt">
+                            4<div class="shade"></div>
+                        </div><div class="ppt5 ppt">
+                            5<div class="shade"></div>
+                        </div><div class="ppt6 ppt">
+                            6<div class="shade"></div>
+                        </div><div class="ppt0 ppt">
+                            0<!--7--><div class="shade"></div>
+                        </div><div class="ppt1 ppt">
+                            1<!--8--><div class="shade"></div>
+                        </div><div class="ppt2 ppt">
+                            2<!--9--><div class="shade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul>
+
+                </ul>
+            </div>
+            <div class="last divbtn" onclick="my_Nslide(-1)">last</div>
+            <div class="next divbtn" onclick="my_Nslide(1)">next</div>
+        </div>
+        <div>
+            <div class="dragable">
+                拖动
+            </div>
+        </div>
+        <div id="flat">
+            <div class="flat1 flat">1</div><!--
+         --><div class="flat2 flat">2</div><!--
+         --><div class="flat3 flat">3</div><!--
+         --><div class="flat4 flat">4</div>
+        </div>
+        <div id="other">
+            
+        </div>
+        <form id="updateFile" action="/api/test_post" method="POST" enctype="multipart/form-data">
+            <p>
+                Please specify a file, or a set of files:<br />
+                <input id="updateFileInput" type="file" name="datafile" size="40" />
+                <input type="submit" />
+            </p>
+        </form>
+        <div style="width:50px;height:50px;background-color:lightblue;" class="upfilebtn"></div>
+        <script src="/js/fe_components.js"></script>
+    </body>
+</html>

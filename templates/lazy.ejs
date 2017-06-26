@@ -1,0 +1,16 @@
+<%
+    opt={
+        css:[
+            '/css/lazy.css',
+        ],
+    }
+%>
+<%- include('head')%>
+    <body>
+        <p>lazy</p>
+        <% for(var i = 0;i < 100; i++){%>
+        <img class="kan" src="/i/default.jpg" data-src="/i/kancolle.png" alt="<%= i %>" />
+        <%}%>
+        <script src="/js/lazy.js"></script>
+    </body>
+</html>

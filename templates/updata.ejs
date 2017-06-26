@@ -1,0 +1,37 @@
+<%
+    opt={
+        css:[
+            '/css/fe_components.css',
+            '/css/updata.css'
+        ],
+    }
+%>
+<%- include('head')%>
+    <body style="padding:20px">
+        <div id="root"></div>
+        <div class="box">
+            <p>这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。这是描述文字。</p>
+            <div class="p1btn btn">Test_P1</div>
+            <p>这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字</p>
+            <div class="p2btn btn">Test_P2</div>            
+        </div>
+        <script>
+$('.p2btn').click(function(){
+    var that = $('.box p');
+    if(that.hasClass('open')){
+        that.removeClass('open');
+        that.css({
+            'white-space':'nowrap',
+        })
+    }
+    else{
+        that.addClass('open');        
+        that.css({
+            'white-space':'pre-wrap',
+        })
+    }
+
+})
+        </script>
+    </body>
+</html>

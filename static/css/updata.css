@@ -1,0 +1,28 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.box{
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: lightblue;
+    color:white;
+    padding: 20px 40px
+}
+.box p {
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn{
+    width: 100px;
+    line-height: 40px;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+}

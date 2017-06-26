@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.putibabyPPT .pptBox {
+  position: relative;
+}
+
+.putibabyPPT .pptTop {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.putibabyPPT .pptInner {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.putibabyPPT .ppt {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+
+  width: 100vw;
+  min-width: 1100px;
+  display: inline-block;
+  z-index: 11;
+}
+
+.putibabyPPT .ppt0 {
+  background-color: lightseagreen;
+}
+
+.putibabyPPT .ppt1 {
+  background-color: lightgrey;
+}
+
+.putibabyPPT .ppt2 {
+  background-color: lightcoral;
+}
+
+.putibabyPPT .ppt3 {
+  background-color: lightblue;
+}
+
+.putibabyPPT .ppt4 {
+  background-color: lightskyblue;
+}
+
+.putibabyPPT .ppt5 {
+  background-color: deepskyblue;
+}
+
+.putibabyPPT .ppt6 {
+  background-color: gold;
+}
+
+.putibabyPPT .bottom {
+  width: 1200px;
+  text-align: center;
+}
+
+.putibabyPPT .bottom ul {
+  margin: 20px auto;
+}
+
+.putibabyPPT .bottom li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  list-style: none;
+  background-color: lightgrey;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.putibabyPPT .bottom li.active {
+  background-color: gray;
+}
+
+.putibabyPPT .divbtn {
+  width: 80px;
+  height: 50px;
+  background-color: #adcb47;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+}
+
+.neteasePPT .pptBox {
+  position: relative;
+  height: 200px;
+}
+
+.neteasePPT .pptTop {
+  position: absolute;
+  width: 1200px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.neteasePPT .pptInner {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.neteasePPT .ppt {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  line-height: 200px;
+}
+
+.neteasePPT .ppt.active {
+  transform: scale(1.3, 1.3);
+  z-index: 100;
+}
+
+.neteasePPT .shade {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.neteasePPT .ppt0 {
+  background-color: lightseagreen;
+}
+
+.neteasePPT .ppt1 {
+  background-color: lightgrey;
+}
+
+.neteasePPT .ppt2 {
+  background-color: lightcoral;
+}
+
+.neteasePPT .ppt3 {
+  background-color: lightblue;
+}
+
+.neteasePPT .ppt4 {
+  background-color: lightskyblue;
+}
+
+.neteasePPT .ppt5 {
+  background-color: deepskyblue;
+}
+
+.neteasePPT .ppt6 {
+  background-color: gold;
+}
+
+.neteasePPT .bottom {
+  width: 1200px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.neteasePPT .bottom ul {
+  margin: 0 auto;
+}
+
+.neteasePPT .bottom li {
+  display: inline-block;
+  width: 12px;
+  list-style: none;
+  height: 2px;
+  background-color: lightgrey;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.neteasePPT .bottom li.active {
+  background-color: gray;
+}
+
+.neteasePPT .divbtn {
+  width: 80px;
+  height: 50px;
+  background-color: #adcb47;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+}
+
+.dragable {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: mediumvioletred;
+  border-radius: 5px;
+  color: white;
+  line-height: 200px;
+  font-size: 24px;
+  text-align: center;
+  z-index: 101;
+  cursor: pointer;
+}
+
+#flat {
+  margin-top: 420px;
+  margin-left: 250px;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 0;
+  -moz-transform-style: preserve-3d;
+  -moz-perspective: 0;
+  animation: mydhua 10s linear infinite;
+  -webkit-animation: mydhua 10s linear infinite;
+  -moz-animation: mydhua 10s linear infinite;
+
+}
+
+#flat .flat {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 0px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 48px;
+  color: white;
+}
+
+#flat .flat1 {
+  background-color: lightblue;
+  transform: translateZ(100px);
+  -webkit-transform: translateZ(100px);
+  -moz-transform: translateZ(100px);
+}
+
+#flat .flat2 {
+  transform: rotateX(90deg) translateZ(100px);
+  -moz-transform: rotateX(90deg) translateZ(100px);
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+  background-color: lightpink;
+}
+
+#flat .flat3 {
+  transform: translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  -webkit-transform: translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  -moz-transform: translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  background-color: lightgreen;
+}
+
+#flat .flat4 {
+  transform: rotateX(90deg) translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  -webkit-transform: rotateX(90deg) translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  -moz-transform: rotateX(90deg) translateZ(-100px) rotateZ(180deg) rotateY(180deg);
+  background-color: lightseagreen;
+}
+
+@-webkit-keyframes mydhua {
+  0% {
+    -webkit-transform: rotateX(0deg);
+  }
+
+  20% {
+    -webkit-transform: rotateX(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotateX(-90deg);
+  }
+
+  45% {
+    -webkit-transform: rotateX(-90deg);
+  }
+
+  50% {
+    -webkit-transform: rotateX(-180deg);
+  }
+
+  70% {
+    -webkit-transform: rotateX(-180deg);
+  }
+
+  75% {
+    -webkit-transform: rotateX(-270deg);
+  }
+
+  95% {
+    -webkit-transform: rotateX(-270deg);
+  }
+
+  100% {
+    -webkit-transform: rotateX(-360deg);
+  }
+}
+
+@-moz-keyframes mydhua{
+  0% {
+    -moz-transform: rotateX(0deg);
+    -moz-transform-origin: center center;
+  }
+
+  20% {
+    -moz-transform: rotateX(0deg);
+    -moz-transform-origin: center center;
+  }
+
+  25% {
+    -moz-transform: rotateX(-90deg);
+    -moz-transform-origin: center center;
+  }
+
+  45% {
+    -moz-transform: rotateX(-90deg);
+    -moz-transform-origin: center center;
+  }
+
+  50% {
+    -moz-transform: rotateX(-180deg);
+    -moz-transform-origin: center center;
+  }
+
+  70% {
+    -moz-transform: rotateX(-180deg);
+    -moz-transform-origin: center center;
+  }
+
+  75% {
+    -moz-transform: rotateX(-270deg);
+    -moz-transform-origin: center center;
+  }
+
+  95% {
+    -moz-transform: rotateX(-270deg);
+    -moz-transform-origin: center center;
+  }
+
+  100% {
+    -moz-transform: rotateX(-360deg);
+    -moz-transform-origin: center center;
+  }
+}
+
+#other {
+  width: 500px;
+  height: 500px;
+  margin-top: 100px;
+  border: 1px solid blue;
+}

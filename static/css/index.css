@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  font-family: 'Microsoft YaHei','Hiragino Sans GB',Arial,sans-serif;
+}
+
+nav {
+  position: fixed;
+  left: 50px;
+  top: 20%;
+  width: 50px;
+  border: 1px solid deepskyblue;
+  border-radius: 3px;
+  display: none;
+}
+
+nav ul li {
+  list-style-type: none;
+  text-align: center;
+  color: deepskyblue;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background-color: #f3f3f3;
+}
+
+.level_1 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding-top: 100px;
+  background-image: url('/i/bg1.png');
+}
+
+.level_1 .level1cnt {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: inherit;
+  padding-top: 1px;
+}
+
+.level_1 .level1cnt h1 {
+  text-align: center;
+  display: block;
+  width: 490px;
+  margin: 0 auto;
+  color: #8d91ff;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 100px;
+  background-color: white;
+}
+
+.level_1 .searchBox {
+  width: 600px;
+  height: 40px;
+  border-radius: 22px;
+  position: relative;
+  border: 1px solid #8d91ff;
+  vertical-align: top;
+  margin: 0 auto;
+  margin-top: 55px;
+  background-color: white;
+}
+
+.level_1 .searchBox input {
+  display: inline-block;
+  vertical-align: top;
+  height: 38px;
+  border: 0;
+  border-radius: 19px;
+  padding-left: 20px;
+  font-size: 22px;
+  outline: none;
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', Arial, sans-serif;
+  font-weight: 200;
+  width: 480px;
+}
+
+.level_1 .searchBox .go {
+  position: absolute;
+  vertical-align: top;
+  height: 39px;
+  line-height: 38px;
+  background-color: #8d91ff;
+  color: white;
+  width: 100px;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  border: 1px solid #8d91ff;
+}
+
+.level_1 .searchBox .go:hover {
+  background-color: white;
+  color: #8d91ff;
+}
+
+.level_2 {
+  position: relative;
+  width: 1200px;
+  margin: 50px auto;
+  height: 400px;
+  background-color: white;
+  border: 1px solid lightblue;
+  border-radius: 5px; 
+}
+
+.level_2 .title {
+  height: 100%;
+  width: 20%;
+  background-color: deepskyblue;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.level_2 .title p {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.level_2 .title .getMore {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.level_2 .recommend {
+  height: 100%;
+  width: 20%;
+  border-left: 1px solid lightblue;
+  display: inline-block;
+  vertical-align: top;
+}

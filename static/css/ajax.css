@@ -1,0 +1,56 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+h3{
+    line-height: 48px;
+    font-size: 20px;
+}
+pre{
+    border: 1px solid lightgray;
+    width: 40vw;
+    height: 200px;
+    margin: 20px 0px;
+}
+
+input.longInput{
+    width: 400px;
+    line-height: 32px;
+    font-size: 18px;
+    padding-left: 10px;
+    margin: 20px;
+    margin-left: 0px;
+}
+input.shortInput{
+    width: 150px;
+    line-height: 32px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+div.buleBtnType{
+    display: inline-block;
+    width: 100px;
+    line-height: 32px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border: 1px solid skyblue;
+    color: skyblue;
+    text-align: center;
+    cursor: pointer;
+}
+div.buleBtnType.active{
+    background-color: skyblue;
+    color: white;
+}
+div.buleBigBtnType{
+    display: inline-block;
+    width: 150px;
+    line-height: 48px;
+    font-size: 24px;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
