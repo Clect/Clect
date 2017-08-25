@@ -1,0 +1,96 @@
+.container{
+    position: relative;
+    margin: 5vw auto 0;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #333;
+}
+
+.container .logo{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    z-index: 99;
+}
+
+.container .monsterHouse{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #eee;
+    right: 10px;
+    bottom: 10px
+}
+
+.container .monster{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    right: 10px;
+    bottom: 10px
+}
+
+.container .monsterA{
+    background-color: red;
+}
+.container .monsterB{
+    background-color: yellow;
+}
+.container .monsterC{
+    background-color: blue;
+}
+
+.container .begin{
+    position: absolute;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #333;
+    top: 135px;
+    left: 105px;
+}
+
+.log{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #333;
+    border-top: 0;
+}
+
+.equipment{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #333;
+    border-top: 0;
+}
+.item{
+    display: inline-block;
+    vertical-align: top;
+    width: 99px;
+    height: 99px;
+    line-height: 99px;
+    text-align: center;
+    border-right: 1px solid #333;
+    font-size: 24px;
+    cursor: pointer;
+}
+.item:nth-of-type(3){
+    border-right: 0;
+}
